@@ -18,14 +18,17 @@ namespace TennisGame_20180618
 
         public string Score()
         {
-            if (_secondPlayerScore > 0)
+            if (_firstPlayerScore == 0 && _secondPlayerScore == 0)
             {
-                return "Love " + _scoreLookup[_secondPlayerScore];
+                return "Love All";
             }
 
-            return _firstPlayerScore > 0 ?
-                _scoreLookup[_firstPlayerScore] + " Love" :
-                "Love All";
+            return NormalScore();
+        }
+
+        private string NormalScore()
+        {
+            return _scoreLookup[_firstPlayerScore] + " " + _scoreLookup[_secondPlayerScore];
         }
 
         public void FirstPlayerScore()
