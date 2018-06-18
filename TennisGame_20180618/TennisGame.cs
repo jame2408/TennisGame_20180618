@@ -4,6 +4,15 @@ namespace TennisGame_20180618
 {
     public class TennisGame
     {
+        private readonly string _firstPlayerName;
+        private readonly string _secondPlayerName;
+
+        public TennisGame(string firstPlayerName, string secondPlayerName)
+        {
+            _firstPlayerName = firstPlayerName;
+            _secondPlayerName = secondPlayerName;
+        }
+
         private int _firstPlayerScore = 0;
 
         private int _secondPlayerScore = 0;
@@ -20,6 +29,10 @@ namespace TennisGame_20180618
         {
             if (IsScoreDifferent())
             {
+                if (_firstPlayerScore > 3 || _secondPlayerScore > 3)
+                {
+                    return _firstPlayerName + " Adv";
+                }
                 return NormalScore();
             }
 
