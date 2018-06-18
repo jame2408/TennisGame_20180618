@@ -27,6 +27,13 @@ namespace TennisGame_20180618
             ScoreShouldBe("Thirty Love");
         }
 
+        [TestMethod]
+        public void Fourty_Love()
+        {
+            FirstPlayerScoreTimes(3);
+            ScoreShouldBe("Fourty Love");
+        }
+
         private void FirstPlayerScoreTimes(int times)
         {
             for (int i = 0; i < times; i++)
