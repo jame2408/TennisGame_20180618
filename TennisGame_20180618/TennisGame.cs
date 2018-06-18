@@ -28,21 +28,14 @@ namespace TennisGame_20180618
 
         public string Score()
         {
-            if (IsScoreDifferent())
-            {
-                if (IsReadyForWin())
-                {
-                    if (IsAdv())
-                    {
-                        return ReadyForWinName() + " Adv";
-                    }
+            return IsScoreDifferent()
+                ? (IsReadyForWin() ? AdvOrWin() : NormalScore())
+                : (IsDeuce() ? Deuce() : SameScore());
+        }
 
-                    return ReadyForWinName() + " Win";
-                }
-                return NormalScore();
-            }
-
-            return IsDeuce() ? Deuce() : SameScore();
+        private string AdvOrWin()
+        {
+            return IsAdv() ? ReadyForWinName() + " Adv" : ReadyForWinName() + " Win";
         }
 
         private bool IsAdv()
