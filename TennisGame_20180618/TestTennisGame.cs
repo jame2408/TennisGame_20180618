@@ -63,6 +63,22 @@ namespace TennisGame_20180618
             ScoreShouldBe("Fifteen All");
         }
 
+        [TestMethod]
+        public void Thirty_All()
+        {
+            FirstPlayerScoreTimes(2);
+            SecondPlayerScoreTimes(2);
+            ScoreShouldBe("Thirty All");
+        }
+
+        [TestMethod]
+        public void Fourty_All()
+        {
+            FirstPlayerScoreTimes(3);
+            SecondPlayerScoreTimes(3);
+            ScoreShouldBe("Fourty All");
+        }
+
         private void SecondPlayerScoreTimes(int times)
         {
             for (int i = 0; i < times; i++)
