@@ -6,6 +6,8 @@ namespace TennisGame_20180618
     {
         private int _firstPlayerScore = 0;
 
+        private int _secondPlayerScore = 0;
+
         private readonly Dictionary<int, string> _scoreLookup = new Dictionary<int, string>()
         {
             {0, "Love"},
@@ -16,6 +18,11 @@ namespace TennisGame_20180618
 
         public string Score()
         {
+            if (_secondPlayerScore > 0)
+            {
+                return "Love " + _scoreLookup[_secondPlayerScore];
+            }
+
             return _firstPlayerScore > 0 ?
                 _scoreLookup[_firstPlayerScore] + " Love" :
                 "Love All";
@@ -24,6 +31,11 @@ namespace TennisGame_20180618
         public void FirstPlayerScore()
         {
             _firstPlayerScore++;
+        }
+
+        public void SecondPlayerScore()
+        {
+            _secondPlayerScore++;
         }
     }
 }
