@@ -6,6 +6,10 @@
 
         public string Score()
         {
+            if (_firstPlayerScore == 2)
+            {
+                return "Thirty Love";
+            }
             return _firstPlayerScore == 1 ? "Fifteen Love" : "Love All";
         }
 
