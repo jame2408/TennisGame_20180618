@@ -32,7 +32,7 @@ namespace TennisGame_20180618
             {
                 if (IsReadyForWin())
                 {
-                    if (Math.Abs(_firstPlayerScore - _secondPlayerScore) == 1)
+                    if (IsAdv())
                     {
                         return AdvPlayerName() + " Adv";
                     }
@@ -41,6 +41,11 @@ namespace TennisGame_20180618
             }
 
             return IsDeuce() ? Deuce() : SameScore();
+        }
+
+        private bool IsAdv()
+        {
+            return Math.Abs(_firstPlayerScore - _secondPlayerScore) == 1;
         }
 
         private string AdvPlayerName()
