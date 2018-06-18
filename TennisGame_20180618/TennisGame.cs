@@ -34,8 +34,10 @@ namespace TennisGame_20180618
                 {
                     if (IsAdv())
                     {
-                        return AdvPlayerName() + " Adv";
+                        return ReadyForWinName() + " Adv";
                     }
+
+                    return ReadyForWinName() + " Win";
                 }
                 return NormalScore();
             }
@@ -48,7 +50,7 @@ namespace TennisGame_20180618
             return Math.Abs(_firstPlayerScore - _secondPlayerScore) == 1;
         }
 
-        private string AdvPlayerName()
+        private string ReadyForWinName()
         {
             return _firstPlayerScore > _secondPlayerScore ? _firstPlayerName : _secondPlayerName;
         }

@@ -103,6 +103,13 @@ namespace TennisGame_20180618
             ScoreShouldBe("James Adv");
         }
 
+        [TestMethod]
+        public void FirstPlayer_Win_When_4_0()
+        {
+            FirstPlayerScoreTimes(4);
+            ScoreShouldBe("Joey Win");
+        }
+
         private void SecondPlayerScoreTimes(int times)
         {
             for (int i = 0; i < times; i++)
