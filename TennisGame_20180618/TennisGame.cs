@@ -35,7 +35,7 @@ namespace TennisGame_20180618
 
         private string AdvOrWin()
         {
-            return IsAdv() ? ReadyForWinName() + " Adv" : ReadyForWinName() + " Win";
+            return ReadyForWinName() + (IsAdv() ? " Adv" : " Win");
         }
 
         private bool IsAdv()
