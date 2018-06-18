@@ -110,6 +110,14 @@ namespace TennisGame_20180618
             ScoreShouldBe("Joey Win");
         }
 
+        [TestMethod]
+        public void SecondPlayer_Win_When_4_6()
+        {
+            FirstPlayerScoreTimes(4);
+            SecondPlayerScoreTimes(6);
+            ScoreShouldBe("James Win");
+        }
+
         private void SecondPlayerScoreTimes(int times)
         {
             for (int i = 0; i < times; i++)
