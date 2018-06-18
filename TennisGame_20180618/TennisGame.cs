@@ -18,9 +18,9 @@ namespace TennisGame_20180618
 
         public string Score()
         {
-            if (_firstPlayerScore == 0 && _secondPlayerScore == 0)
+            if (_firstPlayerScore == _secondPlayerScore)
             {
-                return "Love All";
+                return _scoreLookup[_firstPlayerScore] + " All";
             }
 
             return NormalScore();
