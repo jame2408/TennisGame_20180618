@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace TennisGame_20180618
 {
@@ -31,12 +32,20 @@ namespace TennisGame_20180618
             {
                 if (IsReadyForWin())
                 {
-                    return _firstPlayerName + " Adv";
+                    if (Math.Abs(_firstPlayerScore - _secondPlayerScore) == 1)
+                    {
+                        return AdvPlayerName() + " Adv";
+                    }
                 }
                 return NormalScore();
             }
 
             return IsDeuce() ? Deuce() : SameScore();
+        }
+
+        private string AdvPlayerName()
+        {
+            return _firstPlayerScore > _secondPlayerScore ? _firstPlayerName : _secondPlayerName;
         }
 
         private bool IsReadyForWin()
