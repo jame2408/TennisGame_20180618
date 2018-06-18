@@ -29,7 +29,7 @@ namespace TennisGame_20180618
         {
             if (IsScoreDifferent())
             {
-                if (_firstPlayerScore > 3 || _secondPlayerScore > 3)
+                if (IsReadyForWin())
                 {
                     return _firstPlayerName + " Adv";
                 }
@@ -37,6 +37,11 @@ namespace TennisGame_20180618
             }
 
             return IsDeuce() ? Deuce() : SameScore();
+        }
+
+        private bool IsReadyForWin()
+        {
+            return _firstPlayerScore > 3 || _secondPlayerScore > 3;
         }
 
         private bool IsScoreDifferent()
