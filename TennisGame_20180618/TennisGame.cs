@@ -20,10 +20,15 @@ namespace TennisGame_20180618
         {
             if (_firstPlayerScore == _secondPlayerScore)
             {
-                return _scoreLookup[_firstPlayerScore] + " All";
+                return SameScore();
             }
 
             return NormalScore();
+        }
+
+        private string SameScore()
+        {
+            return _scoreLookup[_firstPlayerScore] + " All";
         }
 
         private string NormalScore()
