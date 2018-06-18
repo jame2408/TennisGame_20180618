@@ -72,11 +72,11 @@ namespace TennisGame_20180618
         }
 
         [TestMethod]
-        public void Fourty_All()
+        public void Deuce_3_3()
         {
             FirstPlayerScoreTimes(3);
             SecondPlayerScoreTimes(3);
-            ScoreShouldBe("Fourty All");
+            ScoreShouldBe("Deuce");
         }
 
         private void SecondPlayerScoreTimes(int times)

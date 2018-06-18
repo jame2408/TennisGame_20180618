@@ -20,6 +20,10 @@ namespace TennisGame_20180618
         {
             if (_firstPlayerScore == _secondPlayerScore)
             {
+                if (_firstPlayerScore >= 3 && _secondPlayerScore >= 3)
+                {
+                    return "Deuce";
+                }
                 return SameScore();
             }
 
