@@ -2,9 +2,16 @@
 {
     public class TennisGame
     {
+        private int _firstPlayerScore = 0;
+
         public string Score()
         {
-            return "Love All";
+            return _firstPlayerScore == 1 ? "Fifteen Love" : "Love All";
+        }
+
+        public void FirstPlayerScore()
+        {
+            _firstPlayerScore++;
         }
     }
 }
