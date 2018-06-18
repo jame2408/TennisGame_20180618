@@ -18,16 +18,27 @@ namespace TennisGame_20180618
 
         public string Score()
         {
-            if (_firstPlayerScore == _secondPlayerScore)
+            if (IsScoreDifferent())
             {
-                if (_firstPlayerScore >= 3 && _secondPlayerScore >= 3)
-                {
-                    return "Deuce";
-                }
-                return SameScore();
+                return NormalScore();
             }
 
-            return NormalScore();
+            return IsDeuce() ? Deuce() : SameScore();
+        }
+
+        private bool IsScoreDifferent()
+        {
+            return _firstPlayerScore != _secondPlayerScore;
+        }
+
+        private static string Deuce()
+        {
+            return "Deuce";
+        }
+
+        private bool IsDeuce()
+        {
+            return _firstPlayerScore >= 3 && _secondPlayerScore >= 3;
         }
 
         private string SameScore()
