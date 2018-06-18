@@ -5,19 +5,24 @@ namespace TennisGame_20180618
     [TestClass]
     public class TestTennisGame
     {
+        private readonly TennisGame _tennisGame = new TennisGame();
+
         [TestMethod]
         public void Love_All()
         {
-            var tennisGame = new TennisGame();
-            Assert.AreEqual("Love All", tennisGame.Score());
+            ScoreShouldBe("Love All");
         }
 
         [TestMethod]
         public void Fifteen_Love()
         {
-            var tennisGame = new TennisGame();
-            tennisGame.FirstPlayerScore();
-            Assert.AreEqual("Fifteen Love", tennisGame.Score());
+            _tennisGame.FirstPlayerScore();
+            ScoreShouldBe("Fifteen Love");
+        }
+
+        private void ScoreShouldBe(string expected)
+        {
+            Assert.AreEqual(expected, _tennisGame.Score());
         }
     }
 }
