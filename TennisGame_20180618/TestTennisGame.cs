@@ -79,6 +79,14 @@ namespace TennisGame_20180618
             ScoreShouldBe("Deuce");
         }
 
+        [TestMethod]
+        public void Deuce_4_4()
+        {
+            FirstPlayerScoreTimes(4);
+            SecondPlayerScoreTimes(4);
+            ScoreShouldBe("Deuce");
+        }
+
         private void SecondPlayerScoreTimes(int times)
         {
             for (int i = 0; i < times; i++)
